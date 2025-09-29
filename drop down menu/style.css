@@ -1,0 +1,188 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700); 
+
+html{
+    background-color: rgb(255, 255, 255);
+}
+body{
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #dfdbdb;
+    font-family: "Roboto" sans-serif;
+    color: gray;
+
+} 
+
+ul {
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.menu{
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-title{
+    display: block;
+    width: 150px;
+    height: 40px;
+    padding: 12px 0 0;
+    background: rgb(207, 113, 40);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s background color;
+}
+
+.menu-title:before{
+    content: '';
+    display: block;
+    height: 0;
+    border-top: 5px solid rgb(153, 78, 78);
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 0 solid #dfdbdb;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 101;
+    transition: 0.2s 0.2s border-top ease-out, 0.3s border-top-color;
+}
+
+.menu-title:hover{
+    background: rgb(180, 119, 73);
+}
+
+.menu-title:hover:before{
+    border-top-color: rgb(163, 55, 55);
+}
+
+.menu:hover > .menu-title:before{
+    border-top-width: 0;
+    transition: 0.2s border-top-width ease-in, 0.3s border-top-color;
+}
+
+.menu-title:after{
+    content: '';
+    display: block;
+    height: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 0 solid #dfdbdb;
+    bottom: 0;
+    left: 0;
+    z-index: 101;
+    transition: 0.2s border-bottom ease-in;
+}
+
+.menu:hover > .menu-title:after{
+    border-bottom-width: 5px;
+    transition: 0,2s 0.2s border-bottom-width ease-out;
+}
+
+.menu-title_2nd{
+    background: royalblue;
+}
+
+.menu-title_2nd:before{
+    border-top-color: royalblue;
+}
+
+.menu-title_2nd:hover:before{
+    border-top-color: royalblue;
+}
+
+.menu-title_3rd{
+    background: teal;
+}
+
+.menu-title_3rd:hover{
+    background: teal;
+}
+
+.menu-title_3rd:before{
+    border-top-color: teal;
+}
+
+.menu-title_3rd:hover:before{
+    border-top-color: teal;
+}
+
+.menu-dropdown{
+    min-width: 100%;
+    padding: 15px;
+    position: absolute;
+    background: #dfdbdb;
+    z-index: 100;
+    transition: 0.5s padding, 0.5s background;
+}
+
+.menu-dropdown:after{
+    content: '';
+    display: block;
+    height: 0;
+    border-top: 5px solid #dfdbdb;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    position: absolute;
+    z-index: 101;
+    top: 100%;
+    left: 0;
+    transition: 0,5s border-top;
+}
+.menu:not(:hover) > .menu-dropdown{
+    border-top-color: #dfdbdb;
+
+}  
+.menu:not(:hover) > .menu-dropdown:after{  
+    border-top-color: #dfdbdb;
+}
+
+.menu:not(:hover) > .menu-dropdown{
+    padding: 40px 0 40px;
+    background: #dfdbdb;
+    z-index: 99;
+}
+
+.menu-dropdown > * {
+    overflow: hidden;
+    height: 30px;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0);
+    white-space: nowrap;
+    transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s padding cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s, margin cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s 0.2s background-color;
+}
+
+.menu-dropdown > *:hover{
+    background:  rgba(0, 0, 0, 0);
+}
+.menu:not(:hover) > .menu-dropdown{
+    visibility: hidden;
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    color:  rgba(25, 25, 25, 0);
+    transition: 0.5s 0.1s height, 0.5s 0.1s padding, 0.5s 0.1s margin, 0.3s color, 0.6s visibility;
+    z-index: 99;
+}
+
+.hlist > * {
+    float: left;
+}
+
+.hlist > * + *{
+    margin-left: 0;
+    
+}
